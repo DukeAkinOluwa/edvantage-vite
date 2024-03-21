@@ -4,8 +4,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
       return cache.addAll([
-        './tree/main/assets/',
-        './tree/main/Images/',
+        './Images/',
+        './assets/',
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'
       ]);
     })
