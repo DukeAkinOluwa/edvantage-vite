@@ -2,21 +2,15 @@ const cacheData = "edvantageData";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(cacheData)
-      .then((cache) => {
-        const urlsToCache = ['/assets/', '/Images/', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'];
-
-        try {
-          return cache.addAll(urlsToCache);
-        } catch (error) {
-          console.error("Failed to cache resources:", error);
-        }
-
-        console.log("All resources cached successfully"); // Optional for development
-      })
+    caches.open(cacheData).then((cache) => {
+      return cache.addAll([
+        './assets/',
+        './Images/',
+        'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'
+      ]);
+    })
   );
 });
-
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
@@ -49,19 +43,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
-
-
-// this.addEventListener("fetch", (event)=>{
-//     if(!navigator.onLine){
-//         event.respondWith(
-//             caches.match(event.request).then((resp)=>{
-//                 if(resp){
-//                     return resp
-//                 }
-//             })
-//         )
-//         let requestUrl = event.request.clone();
-//         fetch(requestUrl)
-//     }
-// })
