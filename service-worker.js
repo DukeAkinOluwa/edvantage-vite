@@ -4,7 +4,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData)
       .then((cache) => {
-        const urlsToCache = ['/assets/', '/Images/', 'https://fonts.googleapis.com/css2?...'];
+        const urlsToCache = ['/assets/', '/Images/', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'];
 
         try {
           return cache.addAll(urlsToCache);
