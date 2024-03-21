@@ -4,8 +4,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
       return cache.addAll([
-        './Images/',
         './assets/',
+        './Images/',
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'
       ]);
     })
@@ -20,7 +20,7 @@ self.addEventListener("fetch", (event) => {
         return fetch(event.request).then((networkResponse) => {
           if (networkResponse.status === 304 || cachedResponse.headers.get('ETag') === networkResponse.headers.get('ETag')) {
             // If no updates (304 Not Modified) or ETags match, return cached response
-            // console.log("Serving from cache (no updates)");
+            console.log("Serving from cache (no updates)");
             return cachedResponse;
           } else {
             // If updates found, update cache and return network response
