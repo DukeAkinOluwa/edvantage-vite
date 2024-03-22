@@ -4,8 +4,8 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(cacheData).then((cache) => {
       return cache.addAll([
-        '/assets/',
-        '/Images/',
+        'https://dukeakinoluwa.github.io/edvantage-vite/assets/',
+        'https://dukeakinoluwa.github.io/edvantage-vite/Images/',
         'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;500&display=swap'
       ]);
     })
