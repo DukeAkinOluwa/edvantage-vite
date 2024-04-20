@@ -3,6 +3,7 @@
   "short_name": "Edvantage",
   "start_url": "./",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "fullscreen", "minimal-ui"],
   "theme_color": "#2A52BE",
   "background_color": "#FEFAFA",
   "icons": [
@@ -10,6 +11,31 @@
       "src": "./Images/Logo2.png",
       "sizes": "1080x1080",
       "type": "image/png"
+    },
+    {
+      "src": "./Images/Logo3.png",
+      "sizes": "386x386",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./Images/screenshot-wide.png",
+      "sizes": "2220x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "./Images/screenshot-mobile.png",
+      "sizes": "1080x2220",
+      "type": "image/png",
+      "form factor": "narrow"
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+edvantage",
+      "url": "./users/[userId]/%s"
     }
   ]
 }
